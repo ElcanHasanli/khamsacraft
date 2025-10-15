@@ -1,0 +1,49 @@
+.cursor {
+  width: 8px;
+  height: 8px;
+  background-color: #3d82c4;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+}
+
+.cursorFollower {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #3d82c4;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+  opacity: 0.5;
+}
+
+.cursorPointer {
+  width: 16px;
+  height: 16px;
+  background-color: #231f20;
+}
+
+.followerPointer {
+  width: 60px;
+  height: 60px;
+  opacity: 0.3;
+}
+
+.cursorHidden {
+  opacity: 0;
+}
+
+/* Mobil cihazlarda cursor göstərmə */
+@media (max-width: 1024px) {
+  .cursor,
+  .cursorFollower {
+    display: none;
+  }
+}
+

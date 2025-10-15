@@ -1,0 +1,202 @@
+.footer {
+  width: 100%;
+  background: linear-gradient(to top, #ffffff 0%, #f8fafc 100%);
+  padding: 40px 0 20px 0;
+  border-top: 1px solid #e5e7eb;
+}
+
+.footerContent {
+    align-items: center;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 50px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #e5e7eb;
+  align-items: start;
+}
+
+.footerLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footerLogoImg {
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+}
+
+.footerTagline {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 160%;
+  color: #6b7280;
+  margin: 0;
+  max-width: 280px;
+}
+
+.footerCenter,
+.footerRight {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-top: 20px;
+}
+
+.footerHeading {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 15px;
+}
+
+.socialLink {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f4f6;
+  border-radius: 50%;
+  color: #4b5563;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.socialLink:hover {
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+.socialLink[aria-label="Instagram"]:hover {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.socialLink[aria-label="TikTok"]:hover {
+  background-color: #000000;
+}
+
+.socialLink[aria-label="LinkedIn"]:hover {
+  background-color: #0077B5;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contactItem {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contactIcon {
+  font-size: 16px;
+}
+
+.footerBottom {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.copyright {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 14px;
+  color: #9ca3af;
+  margin: 0;
+}
+
+/* Responsive dizayn */
+@media (max-width: 992px) {
+  .footerContent {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+  }
+  
+  .footerLeft {
+    grid-column: 1 / -1;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .footerTagline {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 30px 0 15px 0;
+  }
+  
+  .footerContent {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-bottom: 25px;
+  }
+  
+  .footerLeft {
+    grid-column: auto;
+  }
+  
+  .footerCenter,
+  .footerRight {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .socialLinks {
+    justify-content: center;
+  }
+  
+  .contactInfo {
+    align-items: center;
+  }
+  
+  .footerBottom {
+    padding-top: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .footerLogoImg {
+    width: 100px;
+  }
+  
+  .footerTagline,
+  .contactItem {
+    font-size: 13px;
+  }
+  
+  .footerHeading {
+    font-size: 15px;
+  }
+  
+  .socialLink {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .socialLink svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .copyright {
+    font-size: 13px;
+  }
+}
+

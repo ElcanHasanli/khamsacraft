@@ -1,0 +1,84 @@
+.scrollToTop {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #3d82c4 0%, #2563eb 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 25px rgba(61, 130, 196, 0.4);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10000;
+  animation: fadeInUp 0.4s ease;
+}
+
+.scrollToTop:hover {
+  transform: translateY(-7px) scale(1.05);
+  box-shadow: 0 12px 35px rgba(61, 130, 196, 0.6);
+  background: linear-gradient(135deg, #231f20 0%, #3d82c4 100%);
+}
+
+.scrollToTop:active {
+  transform: translateY(-3px) scale(0.95);
+}
+
+.scrollToTop svg {
+  width: 26px;
+  height: 26px;
+  transition: transform 0.3s ease;
+}
+
+.scrollToTop:hover svg {
+  transform: translateY(-2px);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .scrollToTop {
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .scrollToTop svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+@media (max-width: 576px) {
+  .scrollToTop {
+    bottom: 20px;
+    right: 20px;
+    width: 46px;
+    height: 46px;
+  }
+
+  .scrollToTop svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .scrollToTop:hover {
+    transform: translateY(-5px) scale(1.03);
+  }
+}
+

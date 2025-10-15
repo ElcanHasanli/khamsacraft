@@ -1,0 +1,129 @@
+/* Təməl skeleton stil */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 0%,
+    #f8f8f8 20%,
+    #f0f0f0 40%,
+    #f0f0f0 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Service Card Skeleton */
+.serviceCard {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  min-height: 280px;
+}
+
+.cardTop {
+  margin-bottom: 5px;
+}
+
+.cardBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.textLines {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.cardFooter {
+  margin-top: auto;
+}
+
+/* About Skeleton */
+.aboutSkeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px 0;
+  align-items: center;
+}
+
+.centered {
+  margin: 0 auto;
+}
+
+.spacing {
+  height: 20px;
+}
+
+/* Contact Form Skeleton */
+.formSkeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Grid Skeleton */
+.gridSkeleton {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 35px;
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .gridSkeleton {
+    grid-template-columns: 1fr;
+  }
+  
+  .formSkeleton {
+    padding: 30px 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .serviceCard {
+    min-height: 250px;
+    padding: 18px;
+  }
+  
+  .formSkeleton {
+    padding: 25px 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .serviceCard {
+    padding: 16px;
+  }
+  
+  .gridSkeleton {
+    gap: 25px;
+  }
+}
+

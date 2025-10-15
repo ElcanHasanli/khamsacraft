@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global transition yavaşlatma */
+*,
+*::before,
+*::after {
+  transition-duration: 0.5s !important;
+}
+
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light;
+  color: #213547;
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #ffffff;
+  width: 100%;
+  overflow-x: hidden;
+  cursor: none !important;
+}
+
+/* Bütün elementlərdə default cursor-u gizlət */
+* {
+  cursor: none !important;
+}
+
+/* Mobil cihazlarda normal cursor */
+@media (max-width: 1024px) {
+  * {
+    cursor: auto !important;
+  }
+}
+
+#root {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Container məntiqini */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Daha böyük ekranlar üçün */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+/* Orta ekranlar üçün */
+@media (max-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+/* Kiçik ekranlar üçün */
+@media (max-width: 768px) {
+  .container {
+    max-width: 720px;
+    padding: 0 15px;
+  }
+}
+
+/* Mobil üçün */
+@media (max-width: 576px) {
+  .container {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+}
