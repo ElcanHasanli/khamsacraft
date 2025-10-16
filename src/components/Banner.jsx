@@ -35,7 +35,7 @@ function Banner() {
               önə çəkiririk. Sizin uğurunuz bizim missiyamızdır.
             </p>
             <div className={styles.buttonGroup}>
-              <Link to="/services" className={styles.primaryBtn}>Xidmətlərimiz</Link>
+              <Link to="/services" className={styles.primaryBtn}>Daha çox</Link>
               <Link to="/contact" className={styles.secondaryBtn}>Bizimlə Əlaqə</Link>
             </div>
           </div>
