@@ -6,19 +6,19 @@
 }
 
 .footerContent {
-    align-items: center;
-  display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr;
-  gap: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
   padding-bottom: 30px;
   border-bottom: 1px solid #e5e7eb;
-  align-items: start;
+  align-items: flex-start;
 }
 
 .footerLeft {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  width: 100%;
 }
 
 .footerLogoImg {
@@ -33,7 +33,7 @@
   line-height: 160%;
   color: #6b7280;
   margin: 0;
-  max-width: 280px;
+  max-width: 450px;
 }
 
 .footerCenter,
@@ -41,7 +41,7 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-  padding-top: 20px;
+  width: 100%;
 }
 
 .footerHeading {
@@ -109,7 +109,7 @@
 
 .footerBottom {
   padding-top: 20px;
-  text-align: center;
+  text-align: left;
 }
 
 .copyright {
@@ -122,18 +122,7 @@
 /* Responsive dizayn */
 @media (max-width: 992px) {
   .footerContent {
-    grid-template-columns: 1fr 1fr;
-    gap: 35px;
-  }
-  
-  .footerLeft {
-    grid-column: 1 / -1;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .footerTagline {
-    max-width: 400px;
+    gap: 30px;
   }
 }
 
@@ -143,35 +132,21 @@
   }
   
   .footerContent {
-    grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 25px;
     padding-bottom: 25px;
-  }
-  
-  .footerLeft {
-    grid-column: auto;
-  }
-  
-  .footerCenter,
-  .footerRight {
-    align-items: center;
-    text-align: center;
-  }
-  
-  .socialLinks {
-    justify-content: center;
-  }
-  
-  .contactInfo {
-    align-items: center;
   }
   
   .footerBottom {
     padding-top: 15px;
+    text-align: left;
   }
 }
 
 @media (max-width: 576px) {
+  .footer {
+    padding: 30px 0 20px 0;
+  }
+
   .footerLogoImg {
     width: 100px;
   }
@@ -186,8 +161,8 @@
   }
   
   .socialLink {
-    width: 36px;
-    height: 36px;
+    width: 38px;
+    height: 38px;
   }
   
   .socialLink svg {
@@ -197,6 +172,59 @@
   
   .copyright {
     font-size: 13px;
+  }
+  
+  .footerContent {
+    gap: 25px;
+  }
+}
+
+@media (max-width: 390px) {
+  .footer {
+    padding: 25px 0 18px 0;
+  }
+
+  .footerLogoImg {
+    width: 90px;
+  }
+  
+  .footerTagline {
+    font-size: 12.5px;
+  }
+  
+  .footerHeading {
+    font-size: 14px;
+  }
+  
+  .contactItem {
+    font-size: 12px;
+  }
+  
+  .socialLinks {
+    gap: 12px;
+  }
+  
+  .socialLink {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .socialLink svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .copyright {
+    font-size: 12px;
+  }
+  
+  .footerContent {
+    gap: 22px;
+    padding-bottom: 20px;
+  }
+  
+  .footerBottom {
+    padding-top: 12px;
   }
 }
 

@@ -426,7 +426,7 @@
 
 @media (max-width: 768px) {
   .contactSection {
-    padding: 60px 0;
+    padding: 130px 0 60px;
   }
   
   .pageTitle {
@@ -452,11 +452,43 @@
 
 @media (max-width: 576px) {
   .contactSection {
-    padding: 40px 0;
+    padding: 120px 0 40px;
+  }
+  
+  .contactHeader {
+    margin-bottom: 50px;
   }
   
   .pageTitle {
     font-size: 28px;
+    letter-spacing: -1px;
+  }
+  
+  .pageSubtitle {
+    font-size: 15px;
+  }
+  
+  .infoBox {
+    padding: 28px 22px;
+  }
+  
+  .infoBoxTitle {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+  
+  .itemIcon {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .itemValue {
+    font-size: 15px;
+  }
+  
+  .socialLink {
+    width: 44px;
+    height: 44px;
   }
   
   .contactFormWrapper {
@@ -469,6 +501,112 @@
   
   .submitBtn {
     width: 100%;
+  }
+  
+  .decorLeft {
+    width: 180px;
+    left: -70px;
+    opacity: 0.12;
+  }
+  
+  .decorRight {
+    width: 160px;
+    right: -60px;
+    opacity: 0.1;
+  }
+}
+
+@media (max-width: 390px) {
+  .contactSection {
+    padding: 110px 0 35px;
+  }
+  
+  .contactHeader {
+    margin-bottom: 40px;
+  }
+  
+  .pageTitle {
+    font-size: 24px;
+    letter-spacing: -0.5px;
+    margin-bottom: 15px;
+  }
+  
+  .pageSubtitle {
+    font-size: 14px;
+  }
+  
+  .infoBox {
+    padding: 25px 20px;
+  }
+  
+  .infoBoxTitle {
+    font-size: 22px;
+    margin-bottom: 28px;
+  }
+  
+  .infoItem {
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+  
+  .itemIcon {
+    width: 42px;
+    height: 42px;
+  }
+  
+  .itemLabel {
+    font-size: 10px;
+  }
+  
+  .itemValue {
+    font-size: 14px;
+  }
+  
+  .socialLink {
+    width: 42px;
+    height: 42px;
+  }
+  
+  .socialLink svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .contactFormWrapper {
+    padding: 22px 18px;
+  }
+  
+  .formTitle {
+    font-size: 22px;
+    margin-bottom: 25px;
+  }
+  
+  .label {
+    font-size: 13px;
+  }
+  
+  .input,
+  .textarea {
+    font-size: 14px;
+    padding: 11px 14px;
+  }
+  
+  .submitBtn {
+    width: 100%;
+    padding: 12px 35px;
+    font-size: 15px;
+  }
+  
+  .decorLeft {
+    width: 160px;
+    left: -60px;
+    opacity: 0.1;
+  }
+  
+  .decorRight {
+    width: 140px;
+    right: -50px;
+    opacity: 0.08;
   }
 }
 

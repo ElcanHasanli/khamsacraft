@@ -250,6 +250,7 @@
   .banner {
     min-height: 500px;
     padding: 60px 0;
+    margin-top: 70px;
   }
   
   .mainTitle {
@@ -268,14 +269,15 @@
   }
   
   .buttonGroup {
-    flex-direction: column;
+    flex-direction: row;
     gap: 15px;
+    flex-wrap: wrap;
   }
   
   .primaryBtn,
   .secondaryBtn {
-    width: 100%;
-    max-width: 300px;
+    width: auto;
+    padding: 14px 32px;
   }
   
   .maskLeft {
@@ -293,6 +295,7 @@
   .banner {
     min-height: 450px;
     padding: 50px 0;
+    margin-top: 65px;
   }
   
   .mainTitle {
@@ -307,9 +310,14 @@
     font-size: 15px;
   }
   
+  .buttonGroup {
+    gap: 12px;
+  }
+  
   .primaryBtn,
   .secondaryBtn {
-    padding: 14px 32px;
+    width: auto;
+    padding: 13px 28px;
     font-size: 15px;
   }
   
@@ -323,5 +331,51 @@
     width: 280px;
     right: -60px;
     opacity: 0.3;
+  }
+}
+
+@media (max-width: 390px) {
+  .banner {
+    min-height: 400px;
+    padding: 40px 0;
+    margin-top: 60px;
+  }
+  
+  .mainTitle {
+    font-size: 32px;
+    letter-spacing: -0.5px;
+  }
+  
+  .subtitle {
+    font-size: 18px;
+    margin-bottom: 18px;
+  }
+  
+  .description {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  
+  .buttonGroup {
+    gap: 10px;
+  }
+  
+  .primaryBtn,
+  .secondaryBtn {
+    width: auto;
+    padding: 11px 24px;
+    font-size: 14px;
+  }
+  
+  .maskLeft {
+    width: 180px;
+    left: -70px;
+    opacity: 0.25;
+  }
+  
+  .maskRight {
+    width: 240px;
+    right: -50px;
+    opacity: 0.25;
   }
 }
