@@ -382,6 +382,19 @@
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
+.input:disabled,
+.textarea:disabled {
+  background-color: #f3f4f6;
+  color: #9ca3af;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: #9ca3af;
+}
+
 .textarea {
   resize: vertical;
   min-height: 120px;
@@ -410,6 +423,14 @@
 
 .submitBtn:active {
   transform: translateY(0);
+}
+
+.submitBtn:disabled {
+  background-color: #93c5fd;
+  cursor: not-allowed;
+  transform: translateY(0);
+  box-shadow: none;
+  opacity: 0.7;
 }
 
 /* Responsive */

@@ -5,12 +5,16 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
-    host: true, // Bütün network interface-lərə açır (mobil cihazlardan əlçatandır)
+    host: '0.0.0.0', // allow LAN access
     port: 5173,
     strictPort: false,
     hmr: {
-      clientPort: 5173, // HMR üçün düzgün port
-    }
+      host: '192.168.100.241', // your LAN IP for WS
+      protocol: 'ws',
+      clientPort: 5173,
+      port: 5173,
+    },
+    cors: true,
   },
-  base: './', // Relative path istifadə et
+  base: './',
 })

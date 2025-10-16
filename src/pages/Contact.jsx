@@ -4,15 +4,17 @@ import styles from '../css/Contact/Contact.module.css'
 import MaskGroupLeft from '../images/Banner/Mask group.png'
 import MaskGroupRight from '../images/Banner/Mask group (1).png'
 
+const API_URL = 'http://62.171.154.6:8800/contacts'
+
 function Contact() {
   const { addToast } = useToast()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
-    subject: '',
-    message: ''
+    phoneNumber: '',
+    additionalNote: ''
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleChange = (e) => {
     setFormData({
@@ -21,25 +23,67 @@ function Contact() {
     })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     
     // Validasiya
-    if (!formData.name || !formData.email || !formData.message) {
+    if (!formData.name || !formData.email || !formData.additionalNote) {
       addToast('Zəhmət olmasa bütün vacib sahələri doldurun', 'error')
       return
     }
 
-    console.log('Form submitted:', formData)
-    addToast('Mesajınız uğurla göndərildi! Tezliklə sizinlə əlaqə saxlayacağıq.', 'success')
-    
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: ''
-    })
+    // Email validasiyası
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(formData.email)) {
+      addToast('Zəhmət olmasa düzgün email daxil edin', 'error')
+      return
+    }
+
+    setIsSubmitting(true)
+
+    try {
+      // Tarix və vaxt əlavə et
+      const now = new Date()
+      const date = now.toLocaleDateString('az-AZ')
+      const time = now.toLocaleTimeString('az-AZ', { hour: '2-digit', minute: '2-digit' })
+
+      const requestData = {
+        name: formData.name,
+        email: formData.email,
+        phoneNumber: formData.phoneNumber || '',
+        additionalNote: formData.additionalNote,
+        date: date,
+        time: time
+      }
+
+      const response = await fetch(API_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': '*/*'
+        },
+        body: JSON.stringify(requestData)
+      })
+
+      if (response.ok) {
+        addToast('Mesajınız uğurla göndərildi! Tezliklə sizinlə əlaqə saxlayacağıq.', 'success')
+        
+        // Formu təmizlə
+        setFormData({
+          name: '',
+          email: '',
+          phoneNumber: '',
+          additionalNote: ''
+        })
+      } else {
+        throw new Error('Göndərmə uğursuz oldu')
+      }
+    } catch (error) {
+      console.error('Error:', error)
+      addToast('Xəta baş verdi. Zəhmət olmasa yenidən cəhd edin.', 'error')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -148,6 +192,8 @@ function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
+                    disabled={isSubmitting}
+                    placeholder="Ad Soyadınız"
                   />
                 </div>
                 <div className={styles.formGroup}>
@@ -159,48 +205,45 @@ function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                  />
-                </div>
-              </div>
-
-              <div className={styles.formRow}>
-                <div className={styles.formGroup}>
-                  <label className={styles.label}>Telefon</label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    className={styles.input}
-                    value={formData.phone}
-                    onChange={handleChange}
-                  />
-                </div>
-                <div className={styles.formGroup}>
-                  <label className={styles.label}>Mövzu *</label>
-                  <input
-                    type="text"
-                    name="subject"
-                    className={styles.input}
-                    value={formData.subject}
-                    onChange={handleChange}
-                    required
+                    disabled={isSubmitting}
+                    placeholder="email@example.com"
                   />
                 </div>
               </div>
 
               <div className={styles.formGroup}>
+                <label className={styles.label}>Telefon</label>
+                <input
+                  type="tel"
+                  name="phoneNumber"
+                  className={styles.input}
+                  value={formData.phoneNumber}
+                  onChange={handleChange}
+                  disabled={isSubmitting}
+                  placeholder="+994 XX XXX XX XX"
+                />
+              </div>
+
+              <div className={styles.formGroup}>
                 <label className={styles.label}>Mesajınız *</label>
                 <textarea
-                  name="message"
+                  name="additionalNote"
                   className={styles.textarea}
                   rows="6"
-                  value={formData.message}
+                  value={formData.additionalNote}
                   onChange={handleChange}
                   required
+                  disabled={isSubmitting}
+                  placeholder="Mesajınızı buraya yazın..."
                 ></textarea>
               </div>
 
-              <button type="submit" className={styles.submitBtn}>
-                Göndər
+              <button 
+                type="submit" 
+                className={styles.submitBtn}
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? 'Göndərilir...' : 'Göndər'}
               </button>
             </form>
           </div>
