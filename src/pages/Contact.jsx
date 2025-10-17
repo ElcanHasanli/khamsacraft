@@ -14,11 +14,20 @@ function Contact() {
     name: '',
     email: '',
     phoneNumber: '+994',
-    subject: '',
+    topic: '',
     additionalNote: ''
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [phoneLocal, setPhoneLocal] = useState('')
+
+  const normalizeAzPhone = (raw) => {
+    if (!raw) return ''
+    const digits = String(raw).replace(/[^\d]/g, '')
+    // ensure starts with country code 994
+    const noPrefix = digits.startsWith('994') ? digits.slice(3) : digits
+    const trimmed = noPrefix.slice(0, 9)
+    return trimmed.length === 9 ? `+994${trimmed}` : ''
+  }
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -30,7 +39,7 @@ function Contact() {
     e.preventDefault()
     
     // Validasiya
-    if (!formData.name || !formData.email || !formData.subject) {
+    if (!formData.name || !formData.email || !formData.topic) {
       addToast('Zəhmət olmasa bütün vacib sahələri doldurun', 'error')
       return
     }
@@ -39,6 +48,15 @@ function Contact() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     if (!emailRegex.test(formData.email)) {
       addToast('Zəhmət olmasa düzgün email daxil edin', 'error')
+      return
+    }
+
+    // Build/validate AZ phone in +994XXXXXXXXX format
+    const candidatePhone = formData.phoneNumber || (phoneLocal ? `+994 ${phoneLocal}` : '')
+    const normalizedPhone = normalizeAzPhone(candidatePhone)
+    const azRegex = /^\+994\d{9}$/
+    if (!normalizedPhone || !azRegex.test(normalizedPhone)) {
+      addToast("Telefon nömrəsi '+994000000000' formatında olmalıdır", 'error')
       return
     }
 
@@ -53,8 +71,8 @@ function Contact() {
       const requestData = {
         name: formData.name,
         email: formData.email,
-        phoneNumber: formData.phoneNumber || (phoneLocal ? `+994 ${phoneLocal}` : ''),
-        subject: formData.subject,
+        phoneNumber: normalizedPhone,
+        topic: formData.topic,
         additionalNote: formData.additionalNote,
         date: date,
         time: time
@@ -77,7 +95,7 @@ function Contact() {
           name: '',
           email: '',
           phoneNumber: '',
-          subject: '',
+          topic: '',
           additionalNote: ''
         })
         setPhoneLocal('')
@@ -237,9 +255,9 @@ function Contact() {
                 <label className={styles.label}>Mövzu *</label>
                 <input
                   type="text"
-                  name="subject"
+                  name="topic"
                   className={styles.input}
-                  value={formData.subject}
+                  value={formData.topic}
                   onChange={handleChange}
                   required
                   disabled={isSubmitting}

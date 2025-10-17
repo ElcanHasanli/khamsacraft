@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { AnimatePresence } from 'framer-motion'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop'
 import ScrollToTopButton from './components/ScrollToTopButton'
 import CustomCursor from './components/CustomCursor'
 import PageLoader from './components/PageLoader'
@@ -15,11 +16,6 @@ import './index.css'
 
 function AnimatedRoutes() {
   const location = useLocation()
-
-  // Scroll to top on route change
-  React.useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
-  }, [location.pathname])
 
   return (
     <AnimatePresence mode="wait">
@@ -39,6 +35,7 @@ function App() {
       <ToastProvider>
         <PageLoader />
         <CustomCursor />
+        <ScrollToTop />
         <div style={{ width: '100%', overflow: 'hidden', background: '#ffffff' }}>
           <Header />
           <main style={{ width: '100%', margin: 0, padding: 0, marginTop: 0 }}>
