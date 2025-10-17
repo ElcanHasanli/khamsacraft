@@ -1,6 +1,5 @@
 import React from 'react'
-import { useLoading } from '../hooks/useLoading'
-import { GridSkeleton, ServiceCardSkeleton } from './SkeletonLoader'
+// removed loading/skeleton
 import styles from '../css/HomeServices/HomeServices.module.css'
 import MoreInfo from './MoreInfo'
 import LogoIcon from '../images/HomeServices/Group.png'
@@ -9,7 +8,6 @@ import WebsiteIcon from '../images/HomeServices/Group (1).png'
 import BrandingIcon from '../images/HomeServices/Vector (1).png'
 
 export default function HomeServices() {
-  const loading = useLoading(800)
   const services = [
     {
       id: 1,
@@ -50,26 +48,22 @@ export default function HomeServices() {
         </div>
         
         <div className={styles.servicesContent}>
-          {loading ? (
-            <GridSkeleton count={4} CardComponent={ServiceCardSkeleton} />
-          ) : (
-            services.map(service => (
-              <div key={service.id} className={styles.serviceCard}>
-                <div className={styles.cardTop}>
-                  <div className={styles.serviceIcon}>
-                    <img src={service.icon} alt={service.title} />
-                  </div>
-                </div>
-                <div className={styles.cardBody}>
-                  <h3 className={styles.serviceTitle}>{service.title}</h3>
-                  <p className={styles.serviceDescription}>{service.description}</p>
-                </div>
-                <div className={styles.cardFooter}>
-                  <MoreInfo link="/services" />
+          {services.map(service => (
+            <div key={service.id} className={styles.serviceCard}>
+              <div className={styles.cardTop}>
+                <div className={styles.serviceIcon}>
+                  <img src={service.icon} alt={service.title} />
                 </div>
               </div>
-            ))
-          )}
+              <div className={styles.cardBody}>
+                <h3 className={styles.serviceTitle}>{service.title}</h3>
+                <p className={styles.serviceDescription}>{service.description}</p>
+              </div>
+              <div className={styles.cardFooter}>
+                <MoreInfo link="/services" />
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -159,6 +159,16 @@
   }
 }
 
+@media (min-width: 1920px) {
+  .sectionTitle { font-size: 56px; }
+  .sectionSubtitle { font-size: 18px; }
+}
+
+@media (min-width: 2560px) {
+  .sectionTitle { font-size: 64px; }
+  .sectionSubtitle { font-size: 20px; }
+}
+
 @media (max-width: 390px) {
   .whySection {
     padding: 40px 0;

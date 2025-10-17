@@ -356,6 +356,52 @@
   gap: 8px;
 }
 
+/* Phone input with flag */
+.phoneInputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.phonePrefix {
+  position: static;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 42px;
+  padding: 0 12px;
+  background: #f3f4f6; /* bg-gray-100 */
+  border: 1px solid #e5e7eb; /* border-gray-300 */
+  border-right: 0;
+  border-radius: 8px 0 0 8px; /* rounded-s-lg */
+  color: #111827;
+}
+
+.flagEmoji {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.prefixCode {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.phoneInput {
+  height: 42px;
+  padding: 10px 12px; /* p-2.5 */
+  border-left: 0; /* border-s-0 */
+  border-radius: 0 8px 8px 0; /* rounded-e-lg */
+}
+
+/* Focus ring similar to Tailwind focus styles */
+.phoneInput:focus {
+  border-color: #3b82f6; /* focus:border-blue-500 */
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25); /* focus:ring-4 focus:ring-blue-300 */
+}
+
 .label {
   font-family: 'Inter', system-ui, sans-serif;
   font-size: 14px;

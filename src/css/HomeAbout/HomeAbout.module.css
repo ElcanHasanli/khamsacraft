@@ -251,3 +251,17 @@
 .valuesDescription{
   text-align: center;
 }
+
+@media (min-width: 1920px) {
+  .mainHeading { font-size: 56px; }
+  .mainDescription { font-size: 18px; }
+  .valueTitle { font-size: 30px; }
+  .valueDescription { font-size: 17px; }
+}
+
+@media (min-width: 2560px) {
+  .mainHeading { font-size: 64px; }
+  .mainDescription { font-size: 20px; }
+  .valueTitle { font-size: 32px; }
+  .valueDescription { font-size: 18px; }
+}

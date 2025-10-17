@@ -217,6 +217,37 @@
   }
 }
 
+@media (min-width: 1920px) {
+  .mainTitle {
+    font-size: 72px;
+  }
+  .subtitle {
+    font-size: 32px;
+  }
+  .description {
+    font-size: 20px;
+    max-width: 720px;
+  }
+  .primaryBtn,
+  .secondaryBtn {
+    padding: 18px 44px;
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 2560px) {
+  .mainTitle {
+    font-size: 84px;
+  }
+  .subtitle {
+    font-size: 36px;
+  }
+  .description {
+    font-size: 22px;
+    max-width: 800px;
+  }
+}
+
 @media (max-width: 992px) {
   .banner {
     min-height: 550px;

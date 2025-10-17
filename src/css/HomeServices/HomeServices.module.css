@@ -244,6 +244,16 @@
   color: rgba(46, 46, 44, 1);
 }
 
+@media (min-width: 1920px) {
+  .serviceTitle { font-size: 20px; }
+  .serviceDescription { font-size: 14px; }
+}
+
+@media (min-width: 2560px) {
+  .serviceTitle { font-size: 22px; }
+  .serviceDescription { font-size: 15px; }
+}
+
 /* Hidden class */
 .hidden {
   display: none !important;
