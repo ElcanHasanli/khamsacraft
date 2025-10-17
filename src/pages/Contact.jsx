@@ -159,7 +159,7 @@ function Contact() {
                 </div>
                 <div className={styles.itemContent}>
                   <p className={styles.itemLabel}>Telefon</p>
-                  <a href="tel:+994XXXXXXXXX" className={styles.itemValue}>+994 XX XXX XX XX</a>
+                  <a href="tel:+994505556232" className={styles.itemValue}>+994 50 555 62 32</a>
                 </div>
               </div>
 
