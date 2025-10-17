@@ -6,7 +6,7 @@ import styles from '../css/Contact/Contact.module.css'
 import MaskGroupLeft from '../images/Banner/Mask group.png'
 import MaskGroupRight from '../images/Banner/Mask group (1).png'
 
-const API_URL = 'http://62.171.154.6:8800/contacts'
+const API_URL = 'https://api.khamsacraft.az/contacts'
 
 function Contact() {
   const { addToast } = useToast()
