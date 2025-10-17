@@ -20,7 +20,6 @@ jobs:
 
       - name: Install dependencies & build React app
         run: |
-          cd react
           npm install
           npm run build
 
