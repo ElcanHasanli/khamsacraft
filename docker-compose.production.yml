@@ -1,0 +1,7 @@
+services:
+  khamsacraft_front_production:
+    image: agilazizovf/khamsacraftfrontproduction
+    container_name: khamsacraft_front_production
+    restart: always
+    ports:
+      - "9280:80"
